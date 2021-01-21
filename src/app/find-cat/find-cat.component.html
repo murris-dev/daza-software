@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <img src="assets/images/Logo_DazaSoftware.png" alt="Daza software" width="300">
+        </div>
+        <div class="col-6">
+            <h4 class="">Buscador Felino</h4>
+        </div>
+    </div>
+    <hr>
+    <div class="row" *ngIf="show">
+        <div class="col-6">
+            <div class="row">
+                <label class="col-5">Raza felina:</label>
+                <select [(ngModel)]="oCat" class="col-7">
+                    <option disabled>seleccione una opcion</option>
+                    <option *ngFor="let cat of cats" [ngValue]="cat">{{cat.name}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <label class="col-5">id:</label>
+                <label for="" class="col-7">{{oCat?.id}}</label>
+            </div>
+            <div class="row">
+                <label class="col-5">Descripción:</label>
+                <label for="" class="col-7">{{oCat?.description}}</label>
+            </div>
+            <div class="row">
+                <label class="col-5">años de vida:</label>
+                <label for="" class="col-7">{{oCat?.life_span}}</label>
+            </div>
+            <div class="row">
+                <label class="col-5">origen:</label>
+                <label for="" class="col-7">{{oCat?.origin}}</label>
+            </div>
+            <div class="row">
+                <label class="col-5">Wiki:</label>
+                <label for="" class="col-7">{{oCat?.wikipedia_url}}</label>
+            </div>
+            <div class="row">
+                <label class="col-5">VetStreet:</label>
+                <label for="" class="col-7">{{oCat?.vetstreet_url}}</label>
+            </div>
+        </div>
+        <div class="col-6">
+           <img [src]="oCat?.image?.url" alt="" width="400">
+        </div>   
+    </div>
+    <div class="container text-center" *ngIf="!show">CARGANDO....</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container" >
+    <div class="row">
+        <div class="col-6">
+            <img src="assets/images/Logo_DazaSoftware.png" alt="Daza software" width="300">
+        </div>
+        <div class="col-6">
+            <h4 class="">18 fotos felinas</h4>
+        </div>
+    </div>
+    <hr>
+    <div *ngIf="show">
+        <img [src]="image" class="rounded mx-auto d-block">
+        <div class="container">
+            <ul class="navbar navbar-light bg-light">
+                <li class="navbar-brand"><button (click)="first()" [disabled]="!enableFirst"><img src="assets/images/primero.jpg" alt="" width="50"></button></li>
+                <li class="navbar-brand"><button (click)="back()" [disabled]="!enableBack"><img src="assets/images/anterior.jpg" alt="" width="50"></button></li>
+                <li class="navbar-brand"><button (click)="next()" [disabled]="!enableNext"><img src="assets/images/siguiente.jpg" alt="" width="50"></button></li>
+                <li class="navbar-brand"><button (click)="last()" [disabled]="!enableLast"><img src="assets/images/ultimo.jpg" alt="" width="50"></button></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="text-center">
+                <a class="btn btn-primary" (click)="changeImages();">Nuevas Fotos</a>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center" *ngIf="!show">
+        Cargando.....
+    </div>
+</div>
